@@ -25,6 +25,7 @@ public class TuskOneActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tuskone_activity);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         context = TuskOneActivity.this;
         ad = new AlertDialog.Builder(context);
@@ -54,6 +55,7 @@ public class TuskOneActivity extends AppCompatActivity {
                             case 0:
                                 window.setStatusBarColor(getResources().getColor(R.color.colorBrown));
                                 bgElement.setBackgroundColor(Color.parseColor("#795548"));
+                               // setBarColor(R.color.colorBrown, R.color.colorBrown);
                                 break;
                             case 1:
                                 window.setStatusBarColor(getResources().getColor(R.color.colorBlue));
