@@ -11,9 +11,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_activity);
+        setContentView(R.layout.activity_main);
 
-        final Button button1 = (Button) findViewById(R.id.tuskone_button);
+        final Button button1 = (Button) findViewById(R.id.btn_tuskone);
         button1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, TuskOneActivity.class));
@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        final Button button2 = (Button) findViewById(R.id.tusktwo_button);
+        final Button button2 = (Button) findViewById(R.id.btn_tusktwo);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

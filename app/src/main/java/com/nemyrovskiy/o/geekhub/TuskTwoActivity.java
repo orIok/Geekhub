@@ -9,8 +9,8 @@ import android.widget.TextView;
 
 public class TuskTwoActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private EditText facEdText;
-    private TextView facText;
+    private EditText facEdText, fibEdText;
+    private TextView facText, fibText;
 
     public static int factorial(int n) {
         if (n > 10) return -1;
@@ -19,31 +19,46 @@ public class TuskTwoActivity extends AppCompatActivity implements View.OnClickLi
         return f;
     }
 
+    static int fib(int n) {
+        if (n > 9) return -1;
+
+        return n > 1 ? fib(n - 1) + fib(n - 2) : n;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.tusktwo_activity);
+        setContentView(R.layout.activity_tusktwo);
         ActionBar supportActionBar = getSupportActionBar();
         if (supportActionBar != null) {
             supportActionBar.setDisplayHomeAsUpEnabled(true);
         }
 
-        facEdText = (EditText) findViewById(R.id.fac_edittext);
-        facText = (TextView) findViewById(R.id.fac_textview);
+        facEdText = (EditText) findViewById(R.id.edittext_fac);
+        facText = (TextView) findViewById(R.id.textview_fac);
 
-        findViewById(R.id.Factorial_button).setOnClickListener(this);
-        findViewById(R.id.Fibonacci_button).setOnClickListener(this);
+        fibEdText = (EditText) findViewById(R.id.edittext_fib);
+        fibText = (TextView) findViewById(R.id.textview_fib);
+
+        findViewById(R.id.btn_factorial).setOnClickListener(this);
+        findViewById(R.id.btn_fibonacci).setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.Factorial_button:
-                int fa = factorial(Integer.parseInt(facEdText.getText().toString()));
-                facText.setText(String.valueOf(fa));
+            case R.id.btn_factorial:
+                facText.setText
+                        (String.valueOf(factorial(Integer.parseInt(facEdText.getText().toString()))));
+                if (factorial(Integer.parseInt(facEdText.getText().toString())) == -1)
+                    facText.setText("завелике число");
                 break;
-            case R.id.Fibonacci_button:
 
+            case R.id.btn_fibonacci:
+                fibText.setText
+                        (String.valueOf(fib(Integer.parseInt(fibEdText.getText().toString()) - 1)));
+                if (fib(Integer.parseInt(fibEdText.getText().toString()) - 1) == -1)
+                    fibText.setText("завелике число");
                 break;
         }
 

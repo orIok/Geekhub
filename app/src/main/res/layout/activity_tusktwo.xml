@@ -14,14 +14,14 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/fib_edittext"
+            android:id="@+id/edittext_fib"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:inputType="number" />
 
         <TextView
-            android:id="@+id/fib_textview"
+            android:id="@+id/textview_fib"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -29,11 +29,11 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/Fibonacci_button"
+        android:id="@+id/btn_fibonacci"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="16dp"
-        android:text="Підрахувати n-ий елемент" />
+        android:text="знайти n-ий елемент послідовності" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -41,14 +41,14 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/fac_edittext"
+            android:id="@+id/edittext_fac"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:inputType="number" />
 
         <TextView
-            android:id="@+id/fac_textview"
+            android:id="@+id/textview_fac"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -56,11 +56,11 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/Factorial_button"
+        android:id="@+id/btn_factorial"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="16dp"
-        android:text="Факторіал n" />
+        android:text="знайти n!" />
 </LinearLayout>
 
 

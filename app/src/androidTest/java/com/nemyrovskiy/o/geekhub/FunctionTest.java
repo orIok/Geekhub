@@ -14,4 +14,12 @@ public class FunctionTest extends TestCase {
         assertEquals(TuskTwoActivity.factorial(3), 6);
         assertEquals(TuskTwoActivity.factorial(4), 24);
     }
+
+    public void testFib() throws Exception {
+        assertEquals(TuskTwoActivity.fib(0), 0);
+        assertEquals(TuskTwoActivity.fib(1), 1);
+        assertEquals(TuskTwoActivity.fib(2), 1);
+        assertEquals(TuskTwoActivity.fib(3), 2);
+
+    }
 }

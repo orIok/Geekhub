@@ -1,16 +1,12 @@
 package com.nemyrovskiy.o.geekhub;
 
-import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -20,11 +16,11 @@ public class TuskOneActivity extends AppCompatActivity {
     AlertDialog.Builder ad;
     Context context;
 
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    //    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.tuskone_activity);
+        setContentView(R.layout.activity_tuskone);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         context = TuskOneActivity.this;
@@ -32,20 +28,18 @@ public class TuskOneActivity extends AppCompatActivity {
         ad.setTitle("Chose color");
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-        final Window window = getWindow();
-        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+//        final Window window = getWindow();
+//        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+//        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         final LinearLayout secElement = (LinearLayout) findViewById(R.id.conteiner1);
 
-        final Button button = (Button) findViewById(R.id.button11);
+        final Button button = (Button) findViewById(R.id.btn_color);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
                 final String[] mColors = {"brown", "blue", "orange"};
 
-
                 builder.setTitle("Chose color");
-
                 ad.setItems(mColors, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int item) {
@@ -71,10 +65,9 @@ public class TuskOneActivity extends AppCompatActivity {
                                 Toast.LENGTH_SHORT).show();
                     }
                 });
+
                 ad.show();
-
                 builder.setCancelable(false);
-
             }
         });
     }
