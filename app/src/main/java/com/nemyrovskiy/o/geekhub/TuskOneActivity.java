@@ -32,12 +32,10 @@ public class TuskOneActivity extends AppCompatActivity {
         ad.setTitle("Chose color");
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-
         final Window window = getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        final LinearLayout bgElement = (LinearLayout) findViewById(R.id.conteiner1);
-
+        final LinearLayout secElement = (LinearLayout) findViewById(R.id.conteiner1);
 
         final Button button = (Button) findViewById(R.id.button11);
         button.setOnClickListener(new View.OnClickListener() {
@@ -53,17 +51,19 @@ public class TuskOneActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int item) {
                         switch (item) {
                             case 0:
-                                window.setStatusBarColor(getResources().getColor(R.color.colorBrown));
-                                bgElement.setBackgroundColor(Color.parseColor("#795548"));
-                               // setBarColor(R.color.colorBrown, R.color.colorBrown);
+                                //window.setStatusBarColor(getResources().getColor(R.color.colorBrown));
+                                secElement.setBackgroundColor(Color.parseColor("#795548"));
+                                //ActionBar bar = getActionBar();
+                                //getActionBar().setBackgroundDrawable(getResources().getDrawable(R.color.colorBrown));
+                                //bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#795548")));
                                 break;
                             case 1:
-                                window.setStatusBarColor(getResources().getColor(R.color.colorBlue));
-                                bgElement.setBackgroundColor(Color.parseColor("#448AFF"));
+                                //window.setStatusBarColor(getResources().getColor(R.color.colorBlue));
+                                secElement.setBackgroundColor(Color.parseColor("#448AFF"));
                                 break;
                             case 2:
-                                window.setStatusBarColor(getResources().getColor(R.color.colorOrange));
-                                bgElement.setBackgroundColor(Color.parseColor("#FF9800"));
+                                //window.setStatusBarColor(getResources().getColor(R.color.colorOrange));
+                                secElement.setBackgroundColor(Color.parseColor("#FF9800"));
                                 break;
                         }
                         Toast.makeText(getApplicationContext(),
