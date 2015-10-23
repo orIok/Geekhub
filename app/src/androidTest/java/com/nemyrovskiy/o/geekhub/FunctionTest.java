@@ -8,18 +8,18 @@ import junit.framework.TestCase;
 public class FunctionTest extends TestCase {
 
     public void testFactorial() throws Exception {
-        assertEquals(TuskTwoActivity.factorial(0), 1);
-        assertEquals(TuskTwoActivity.factorial(1), 1);
-        assertEquals(TuskTwoActivity.factorial(2), 2);
-        assertEquals(TuskTwoActivity.factorial(3), 6);
-        assertEquals(TuskTwoActivity.factorial(4), 24);
+        assertEquals(TaskTwoActivity.factorial(0), 1);
+        assertEquals(TaskTwoActivity.factorial(1), 1);
+        assertEquals(TaskTwoActivity.factorial(2), 2);
+        assertEquals(TaskTwoActivity.factorial(3), 6);
+        assertEquals(TaskTwoActivity.factorial(4), 24);
     }
 
     public void testFib() throws Exception {
-        assertEquals(TuskTwoActivity.fib(0), 0);
-        assertEquals(TuskTwoActivity.fib(1), 1);
-        assertEquals(TuskTwoActivity.fib(2), 1);
-        assertEquals(TuskTwoActivity.fib(3), 2);
+        assertEquals(TaskTwoActivity.fib(0), 0);
+        assertEquals(TaskTwoActivity.fib(1), 1);
+        assertEquals(TaskTwoActivity.fib(2), 1);
+        assertEquals(TaskTwoActivity.fib(3), 2);
 
     }
 }

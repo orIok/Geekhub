@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-public class TuskOneActivity extends AppCompatActivity {
+public class TaskOneActivity extends AppCompatActivity {
 
     AlertDialog.Builder ad;
     Context context;
@@ -20,10 +20,10 @@ public class TuskOneActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tuskone);
+        setContentView(R.layout.activity_taskone);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        context = TuskOneActivity.this;
+        context = TaskOneActivity.this;
         ad = new AlertDialog.Builder(context);
         ad.setTitle("Chose color");
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);

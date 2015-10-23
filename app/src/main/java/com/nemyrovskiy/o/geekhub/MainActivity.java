@@ -14,17 +14,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         findViewById(R.id.btn_tuskone).setOnClickListener(this);
         findViewById(R.id.btn_tusktwo).setOnClickListener(this);
+        findViewById(R.id.btn_tuskthree).setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_tuskone:
-                startActivity(new Intent(MainActivity.this, TuskOneActivity.class));
+                startActivity(new Intent(MainActivity.this, TaskOneActivity.class));
                 break;
 
             case R.id.btn_tusktwo:
-                startActivity(new Intent(MainActivity.this, TuskTwoActivity.class));
+                startActivity(new Intent(MainActivity.this, TaskTwoActivity.class));
+                break;
+
+            case R.id.btn_tuskthree:
+                startActivity(new Intent(MainActivity.this, TaskThreeActivity.class));
                 break;
         }
     }

@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class TuskTwoActivity extends AppCompatActivity implements View.OnClickListener {
+public class TaskTwoActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText facEdText, fibEdText;
     private TextView facText, fibText;
@@ -28,7 +28,7 @@ public class TuskTwoActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tusktwo);
+        setContentView(R.layout.activity_tasktwo);
         ActionBar supportActionBar = getSupportActionBar();
         if (supportActionBar != null) {
             supportActionBar.setDisplayHomeAsUpEnabled(true);
@@ -48,17 +48,34 @@ public class TuskTwoActivity extends AppCompatActivity implements View.OnClickLi
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_factorial:
-                facText.setText
-                        (String.valueOf(factorial(Integer.parseInt(facEdText.getText().toString()))));
-                if (factorial(Integer.parseInt(facEdText.getText().toString())) == -1)
-                    facText.setText("завелике число");
-                break;
+                try {
+                    facText.setText
+                            (String.valueOf(factorial(Integer.parseInt(facEdText.getText().toString()))));
 
+                    if (factorial(Integer.parseInt(facEdText.getText().toString())) == -1)
+                        facText.setText("завелике число");
+
+
+                } catch (Exception ex) {
+                    facText.setText("введіть ціле число");
+                }
+
+
+                break;
             case R.id.btn_fibonacci:
-                fibText.setText
-                        (String.valueOf(fib(Integer.parseInt(fibEdText.getText().toString()) - 1)));
-                if (fib(Integer.parseInt(fibEdText.getText().toString()) - 1) == -1)
-                    fibText.setText("завелике число");
+                try {
+                    if (fibText.getText() != null) {
+                        fibText.setText
+                                (String.valueOf(fib(Integer.parseInt(fibEdText.getText().toString()) - 1)));
+                    }
+
+                    if (fib(Integer.parseInt(fibEdText.getText().toString()) - 1) == -1)
+                        fibText.setText("завелике ціле число");
+                } catch (Exception ex) {
+                    fibText.setText("введіть число");
+                }
+
+
                 break;
         }
 

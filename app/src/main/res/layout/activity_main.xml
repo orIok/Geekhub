@@ -44,6 +44,12 @@
             android:layout_height="wrap_content"
             android:text="Завдання 2" />
 
+        <Button
+            android:id="@+id/btn_tuskthree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Завдання 3"/>
+
 
     </LinearLayout>
 
