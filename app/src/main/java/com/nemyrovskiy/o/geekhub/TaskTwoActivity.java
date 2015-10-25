@@ -1,11 +1,13 @@
 package com.nemyrovskiy.o.geekhub;
 
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class TaskTwoActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -33,6 +35,7 @@ public class TaskTwoActivity extends AppCompatActivity implements View.OnClickLi
         if (supportActionBar != null) {
             supportActionBar.setDisplayHomeAsUpEnabled(true);
         }
+        findViewById(android.R.id.content).setBackgroundColor(PreferenceManager.getDefaultSharedPreferences(this).getInt("color", android.R.color.background_light));
 
         facEdText = (EditText) findViewById(R.id.edittext_fac);
         facText = (TextView) findViewById(R.id.textview_fac);
@@ -42,6 +45,8 @@ public class TaskTwoActivity extends AppCompatActivity implements View.OnClickLi
 
         findViewById(R.id.btn_factorial).setOnClickListener(this);
         findViewById(R.id.btn_fibonacci).setOnClickListener(this);
+
+        Toast.makeText(this, getIntent().getStringExtra("KEY"), Toast.LENGTH_SHORT).show();
     }
 
     @Override

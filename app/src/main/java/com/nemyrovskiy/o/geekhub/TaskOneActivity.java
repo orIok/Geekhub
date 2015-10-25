@@ -3,9 +3,15 @@ package com.nemyrovskiy.o.geekhub;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -13,20 +19,24 @@ import android.widget.Toast;
 
 public class TaskOneActivity extends AppCompatActivity {
 
-    AlertDialog.Builder ad;
+    AlertDialog.Builder addDialog;
     Context context;
+    private MenuItem XYI_SYKA_ITEM_ZARABOTAI_MRAZ_BLAD;
 
-    //    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_taskone);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        ActionBar supportActionBar = getSupportActionBar();
+        if (supportActionBar != null) {
+            supportActionBar.setDisplayHomeAsUpEnabled(true);
+        }
 
-        context = TaskOneActivity.this;
-        ad = new AlertDialog.Builder(context);
-        ad.setTitle("Chose color");
-        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        findViewById(android.R.id.content).setBackgroundColor(PreferenceManager.getDefaultSharedPreferences(this).getInt("color", android.R.color.background_light));
+
+        addDialog = new AlertDialog.Builder(this);
+        addDialog.setTitle("Chose color");
+//        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
 //        final Window window = getWindow();
 //        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
@@ -34,41 +44,75 @@ public class TaskOneActivity extends AppCompatActivity {
         final LinearLayout secElement = (LinearLayout) findViewById(R.id.conteiner1);
 
         final Button button = (Button) findViewById(R.id.btn_color);
+
+
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                final String[] mColors = {"brown", "blue", "orange"};
-
-                builder.setTitle("Chose color");
-                ad.setItems(mColors, new DialogInterface.OnClickListener() {
+                final String[] mColors = {"brown", "blue", "orange", "default"};
+//                builder.setTitle("Chose color");
+                addDialog.setItems(mColors, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int item) {
+                        int color = 0;
                         switch (item) {
                             case 0:
-                                //window.setStatusBarColor(getResources().getColor(R.color.colorBrown));
-                                secElement.setBackgroundColor(Color.parseColor("#795548"));
-                                //ActionBar bar = getActionBar();
-                                //getActionBar().setBackgroundDrawable(getResources().getDrawable(R.color.colorBrown));
-                                //bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#795548")));
+                                color = Color.parseColor("#795548");
                                 break;
                             case 1:
-                                //window.setStatusBarColor(getResources().getColor(R.color.colorBlue));
-                                secElement.setBackgroundColor(Color.parseColor("#448AFF"));
+                                color = Color.parseColor("#448AFF");
                                 break;
                             case 2:
-                                //window.setStatusBarColor(getResources().getColor(R.color.colorOrange));
-                                secElement.setBackgroundColor(Color.parseColor("#FF9800"));
+                                color = Color.parseColor("#FF9800");
+                                break;
+                            case 3:
+                                color = ContextCompat.getColor(TaskOneActivity.this, android.R.color.background_light);
                                 break;
                         }
-                        Toast.makeText(getApplicationContext(),
-                                "Выбраний колір: " + mColors[item],
+                        secElement.setBackgroundColor(color);
+                        Intent intent = new Intent();
+                        intent.putExtra(MainActivity.COLOR_EXTRA, color);
+                        setResult(RESULT_OK, intent);
+                        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(TaskOneActivity.this);
+
+                        String key = "color";
+                        if (color == android.R.color.background_light) {
+                            preferences.edit().remove(key).apply();
+                        } else {
+                            preferences.edit().putInt(key, color).apply();
+                        }
+                        Toast.makeText(getApplicationContext(), "Выбраний колір: " + mColors[item],
                                 Toast.LENGTH_SHORT).show();
                     }
                 });
 
-                ad.show();
-                builder.setCancelable(false);
+                addDialog.show();
             }
         });
+
+    }
+/*
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(this, "Idi nahui, lalka", Toast.LENGTH_LONG).show();
+
+    }*/
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+//            case R.id.help:
+//                showHelp();
+//                return true;
+//            case XYI_SYKA_ITEM_ZARABOTAI_MRAZ_BLAD.getItemId():
+//                Toast.makeText(this, "Idi nahui, lalka", Toast.LENGTH_LONG).show();
+//                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

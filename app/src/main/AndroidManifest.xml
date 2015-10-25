@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest
-    package="com.nemyrovskiy.o.geekhub"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.nemyrovskiy.o.geekhub">
 
     <application
         android:allowBackup="true"
@@ -21,21 +20,17 @@
         <activity
             android:name=".TaskOneActivity"
             android:label="@string/app_name"
-            android:parentActivityName=".MainActivity">
-        </activity>
+            android:parentActivityName=".MainActivity" />
 
         <activity
             android:name=".TaskTwoActivity"
             android:label="@string/app_name"
-            android:parentActivityName=".MainActivity">
-        </activity>
+            android:parentActivityName=".MainActivity" />
 
         <activity
             android:name=".TaskThreeActivity"
             android:label="@string/app_name"
-            android:parentActivityName=".MainActivity">
-
-        </activity>
+            android:parentActivityName=".MainActivity" />
 
     </application>
 

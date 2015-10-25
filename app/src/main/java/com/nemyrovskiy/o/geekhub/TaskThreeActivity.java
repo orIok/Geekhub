@@ -1,10 +1,13 @@
 package com.nemyrovskiy.o.geekhub;
 
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -31,6 +34,8 @@ public class TaskThreeActivity extends AppCompatActivity implements View.OnClick
         if (supportActionBar != null) {
             supportActionBar.setDisplayHomeAsUpEnabled(true);
         }
+        findViewById(android.R.id.content).setBackgroundColor(PreferenceManager.getDefaultSharedPreferences(this).getInt("color", android.R.color.background_light));
+
 
         textView1 = (TextView) findViewById(R.id.textview_taskthree1);
         textView2 = (TextView) findViewById(R.id.textview_taskthree2);
@@ -55,10 +60,14 @@ public class TaskThreeActivity extends AppCompatActivity implements View.OnClick
 
     private void task2() {
         List<String> list = new LinkedList<>(Arrays.asList(values));
-        ListIterator<String> inter = list.listIterator();
+
+        for (String s : list) {
+            Log.i("", s);
+        }
+        ListIterator<String> iterator = list.listIterator();
         for (int i = 1; i < list.size() + 3; i++) {
-            inter.next();
-            if (i % 3 == 0) inter.remove();
+            iterator.next();
+            if (i % 3 == 0) iterator.remove();
         }
 
         String result = TextUtils.join(", ", list);
