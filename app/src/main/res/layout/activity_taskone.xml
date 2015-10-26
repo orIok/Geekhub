@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="250px"
             android:layout_marginTop="15dp"
-            android:text="Chose color" />
+            android:text="Chose color"/>
 
     </LinearLayout>
 

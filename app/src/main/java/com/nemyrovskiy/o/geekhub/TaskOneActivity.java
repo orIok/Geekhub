@@ -1,7 +1,6 @@
 package com.nemyrovskiy.o.geekhub;
 
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -20,8 +19,6 @@ import android.widget.Toast;
 public class TaskOneActivity extends AppCompatActivity {
 
     AlertDialog.Builder addDialog;
-    Context context;
-    private MenuItem XYI_SYKA_ITEM_ZARABOTAI_MRAZ_BLAD;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,11 +33,7 @@ public class TaskOneActivity extends AppCompatActivity {
 
         addDialog = new AlertDialog.Builder(this);
         addDialog.setTitle("Chose color");
-//        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-//        final Window window = getWindow();
-//        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-//        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         final LinearLayout secElement = (LinearLayout) findViewById(R.id.conteiner1);
 
         final Button button = (Button) findViewById(R.id.btn_color);
@@ -48,9 +41,7 @@ public class TaskOneActivity extends AppCompatActivity {
 
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
                 final String[] mColors = {"brown", "blue", "orange", "default"};
-//                builder.setTitle("Chose color");
                 addDialog.setItems(mColors, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int item) {
@@ -105,12 +96,6 @@ public class TaskOneActivity extends AppCompatActivity {
             case android.R.id.home:
                 onBackPressed();
                 return true;
-//            case R.id.help:
-//                showHelp();
-//                return true;
-//            case XYI_SYKA_ITEM_ZARABOTAI_MRAZ_BLAD.getItemId():
-//                Toast.makeText(this, "Idi nahui, lalka", Toast.LENGTH_LONG).show();
-//                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
