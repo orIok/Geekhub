@@ -36,11 +36,8 @@ public class TaskTwoActivity extends AppCompatActivity implements View.OnClickLi
         findViewById(android.R.id.content).setBackgroundColor(PreferenceManager.
                 getDefaultSharedPreferences(this).getInt("color", android.R.color.background_light));
 
-        facEdText = (EditText) findViewById(R.id.edittext_fac);
-        facText = (TextView) findViewById(R.id.textview_fac);
-
-        fibEdText = (EditText) findViewById(R.id.edittext_fib);
-        fibText = (TextView) findViewById(R.id.textview_fib);
+        facEdText = (EditText) findViewById(R.id.edittext_fib);
+        facText = (TextView) findViewById(R.id.textview_fib);
 
         findViewById(R.id.btn_factorial).setOnClickListener(this);
         findViewById(R.id.btn_fibonacci).setOnClickListener(this);
@@ -64,15 +61,15 @@ public class TaskTwoActivity extends AppCompatActivity implements View.OnClickLi
 
             case R.id.btn_fibonacci:
                 try {
-                    if (fibText.getText() != null) {
-                        fibText.setText
-                                (String.valueOf(fib(Integer.parseInt(fibEdText.getText().toString()) - 1)));
+                    if (facText.getText() != null) {
+                        facText.setText
+                                (String.valueOf(fib(Integer.parseInt(facEdText.getText().toString()) - 1)));
                     }
 
-                    if (fib(Integer.parseInt(fibEdText.getText().toString()) - 1) == -1)
-                        fibText.setText("завелике число");
+                    if (fib(Integer.parseInt(facEdText.getText().toString()) - 1) == -1)
+                        facText.setText("завелике число");
                 } catch (Exception ex) {
-                    fibText.setText("введіть ціле число");
+                    facText.setText("введіть ціле число");
                 }
                 break;
         }

@@ -3,7 +3,10 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="colorBrown">#5D4037</color>
-    <color name="colorBlue">#0288D1</color>
-    <color name="colorOrange">#F57C00</color>
+    <color name="colorBrownA">#795548</color>
+    <color name="colorBrownS">#5D4037</color>
+    <color name="colorBlueA">#2196F3</color>
+    <color name="colorBlueS">#1976D2</color>
+    <color name="colorOrangeA">#FF9800</color>
+    <color name="colorOrangeS">#F57C00</color>
 </resources>

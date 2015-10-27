@@ -28,39 +28,30 @@
             android:text="result"/>
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_fibonacci"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="16dp"
-        android:text="знайти n-ий елемент послідовності"/>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/edittext_fac"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:inputType="number"/>
+        <Button
+            android:id="@+id/btn_fibonacci"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="16dp"
+            android:text="знайти n-ий елемент послідовності"/>
 
-        <TextView
-            android:id="@+id/textview_fac"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="result"/>
+        <Button
+            android:id="@+id/btn_factorial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="16dp"
+            android:text="знайти n!"/>
+
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_factorial"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="16dp"
-        android:text="знайти n!"/>
+
 </LinearLayout>
 
 

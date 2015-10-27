@@ -1,16 +1,18 @@
 package com.nemyrovskiy.o.geekhub;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
+
+// TODO: 28.10.2015 Перепілити всьо під стрінги, добавити лендскейп, добавити свої теми для кожного кольору,
+// допілить зафарбовування екшн і статусбара, удалити тоаст з 2го актівіті
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String COLOR_EXTRA = "color";
     public static final int REQUEST_CODE = 1;
-    private Button b;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +24,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn_tuskone).setOnClickListener(this);
         findViewById(R.id.btn_tusktwo).setOnClickListener(this);
         findViewById(R.id.btn_tuskthree).setOnClickListener(this);
-        findViewById(R.id.test).setOnClickListener(this);
-        b = (Button) findViewById(R.id.test);
     }
 
     @Override
@@ -33,10 +33,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void updateColor() {
-        findViewById(android.R.id.content).setBackgroundColor(PreferenceManager.getDefaultSharedPreferences(this).getInt("color", android.R.color.background_light));
+        findViewById(android.R.id.content).setBackgroundColor(getResources().getColor(PreferenceManager.getDefaultSharedPreferences(this).getInt("colorA", android.R.color.background_light)));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setStatusBarColor(getResources().getColor(PreferenceManager.getDefaultSharedPreferences(this).getInt("colorS", android.R.color.background_light)));
+        }
     }
 
-    @Override
+   /* @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
             case REQUEST_CODE:
@@ -44,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 int color = data.getIntExtra(COLOR_EXTRA, android.R.color.background_light);
                 break;
         }
-    }
+    }*/
 
     @Override
     public void onClick(View v) {
