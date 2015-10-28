@@ -1,6 +1,7 @@
 package com.nemyrovskiy.o.geekhub;
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn_tuskone).setOnClickListener(this);
         findViewById(R.id.btn_tusktwo).setOnClickListener(this);
         findViewById(R.id.btn_tuskthree).setOnClickListener(this);
+
     }
 
     @Override
@@ -33,10 +35,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void updateColor() {
-        findViewById(android.R.id.content).setBackgroundColor(getResources().getColor(PreferenceManager.getDefaultSharedPreferences(this).getInt("colorA", android.R.color.background_light)));
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setStatusBarColor(getResources().getColor(PreferenceManager.getDefaultSharedPreferences(this).getInt("colorS", android.R.color.background_light)));
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        int colorStatusBar = getResources().getColor(PreferenceManager.getDefaultSharedPreferences(this).getInt("colorS", android.R.color.background_light));
+        int colorActionBar = getResources().getColor(PreferenceManager.getDefaultSharedPreferences(this).getInt("colorA", android.R.color.background_light));
+        findViewById(android.R.id.content).setBackgroundColor(colorActionBar);
+
+        if (actionBar != null) {
+            actionBar.setBackgroundDrawable(new ColorDrawable(colorActionBar));
+            getSupportActionBar().setElevation(0);
         }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+            getWindow().setStatusBarColor(colorStatusBar);
+
     }
 
    /* @Override
