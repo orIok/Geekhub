@@ -33,6 +33,11 @@
             android:label="@string/app_name"
             android:parentActivityName=".MainActivity" />
 
+        <activity
+            android:name=".TaskFourActivity"
+            android:label="@string/app_name"
+            android:parentActivityName=".MainActivity"/>
+
     </application>
 
 </manifest>

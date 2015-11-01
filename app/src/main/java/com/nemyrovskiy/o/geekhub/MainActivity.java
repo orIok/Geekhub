@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn_tuskone).setOnClickListener(this);
         findViewById(R.id.btn_tusktwo).setOnClickListener(this);
         findViewById(R.id.btn_tuskthree).setOnClickListener(this);
+        findViewById(R.id.btn_tuskFour).setOnClickListener(this);
 
     }
 
@@ -73,6 +74,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.btn_tuskthree:
                 startActivity(new Intent(this, TaskThreeActivity.class));
+                break;
+
+            case R.id.btn_tuskFour:
+                startActivity(new Intent(this, TaskFourActivity.class));
                 break;
         }
     }

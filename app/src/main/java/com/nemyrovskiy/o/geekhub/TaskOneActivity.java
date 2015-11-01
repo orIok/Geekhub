@@ -95,6 +95,7 @@ public class TaskOneActivity extends AppCompatActivity {
                         }
 
                         thisLayout.setBackgroundColor(getResources().getColor(colorA));
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
                         getWindow().setStatusBarColor(getResources().getColor(colorS));
                         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
                         actionBar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(PreferenceManager.getDefaultSharedPreferences(TaskOneActivity.this).getInt("colorA", android.R.color.background_light))));
