@@ -9,4 +9,6 @@
     <color name="colorBlueS">#1976D2</color>
     <color name="colorOrangeA">#FF9800</color>
     <color name="colorOrangeS">#F57C00</color>
+
+    <item name="blueDrawer" type="color">#FF33B5E5</item>
 </resources>
