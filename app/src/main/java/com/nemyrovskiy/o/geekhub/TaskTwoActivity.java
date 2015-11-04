@@ -87,7 +87,7 @@ public class TaskTwoActivity extends AppCompatActivity implements View.OnClickLi
 
         if (actionBar != null) {
             actionBar.setBackgroundDrawable(new ColorDrawable(colorActionBar));
-            getSupportActionBar().setElevation(0);
+            //getSupportActionBar().setElevation(0);
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
             getWindow().setStatusBarColor(colorStatusBar);

@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity /*implements View.OnClickLis
                 break;
 
             case 4:
-                startActivity(new Intent(this, TaskFourActivity.class));
+                startActivity(new Intent(this, TaskFiveActivity.class));
                 break;
 
             default:
@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity /*implements View.OnClickLis
 
         if (actionBar != null) {
             actionBar.setBackgroundDrawable(new ColorDrawable(colorActionBar));
-            getSupportActionBar().setElevation(0);
+            //getSupportActionBar().setElevation(0);
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
             getWindow().setStatusBarColor(colorStatusBar);

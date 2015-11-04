@@ -123,7 +123,7 @@ public class TaskThreeActivity extends AppCompatActivity implements View.OnClick
 
         if (actionBar != null) {
             actionBar.setBackgroundDrawable(new ColorDrawable(colorActionBar));
-            getSupportActionBar().setElevation(0);
+            //getSupportActionBar().setElevation(0);
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
             getWindow().setStatusBarColor(colorStatusBar);
