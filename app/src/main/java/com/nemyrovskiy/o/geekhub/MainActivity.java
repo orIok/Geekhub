@@ -90,6 +90,10 @@ public class MainActivity extends AppCompatActivity /*implements View.OnClickLis
                 startActivity(new Intent(this, TaskFourActivity.class));
                 break;
 
+            case 4:
+                startActivity(new Intent(this, TaskFourActivity.class));
+                break;
+
             default:
                 break;
         }
