@@ -3,7 +3,6 @@ package com.nemyrovskiy.o.geekhub;
 
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
@@ -13,11 +12,9 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 
 // TODO: 28.10.2015 Перепілити всьо під стрінги, добавити лендскейп, добавити свої теми для кожного кольору,
@@ -75,15 +72,6 @@ public class MainActivity extends AppCompatActivity /*implements View.OnClickLis
 
     }
 
-
-    public class DrawerItemClickListener implements ListView.OnItemClickListener {
-        @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            selectItem(position);
-        }
-
-    }
-
     private void selectItem(int position) {
 
         switch (position) {
@@ -131,10 +119,9 @@ public class MainActivity extends AppCompatActivity /*implements View.OnClickLis
         updateColor();
     }
 
-
     private void updateColor() {
         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
-        int colorStatusBar = getResources().getColor(PreferenceManager.getDefaultSharedPreferences(this).getInt("colorS", android.R.color.background_light));
+        int colorStatusBar = getResources().getColor(PreferenceManager.getDefaultSharedPreferences(this).getInt("colorS", android.R.color.background_dark));
         int colorActionBar = getResources().getColor(PreferenceManager.getDefaultSharedPreferences(this).getInt("colorA", android.R.color.background_light));
         findViewById(android.R.id.content).setBackgroundColor(colorActionBar);
 
@@ -146,6 +133,14 @@ public class MainActivity extends AppCompatActivity /*implements View.OnClickLis
             getWindow().setStatusBarColor(colorStatusBar);
 
         mDrawerList.setBackgroundColor(colorStatusBar);
+
+    }
+
+    public class DrawerItemClickListener implements ListView.OnItemClickListener {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            selectItem(position);
+        }
 
     }
 
