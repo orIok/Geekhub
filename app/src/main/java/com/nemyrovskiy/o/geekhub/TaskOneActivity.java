@@ -31,9 +31,13 @@ public class TaskOneActivity extends AppCompatActivity {
         final String COLOR_STATUSBAR = "colorS";
         final String COLOR_ACTIONBAR = "colorA";
 
-        findViewById(android.R.id.content).setBackgroundColor(getResources().getColor(PreferenceManager.getDefaultSharedPreferences(this).getInt(COLOR_ACTIONBAR, android.R.color.background_light)));
+        findViewById(android.R.id.content).setBackgroundColor(getResources().
+                getColor(PreferenceManager.getDefaultSharedPreferences(this).
+                        getInt(COLOR_ACTIONBAR, android.R.color.background_light)));
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setStatusBarColor(getResources().getColor(PreferenceManager.getDefaultSharedPreferences(this).getInt(COLOR_STATUSBAR, android.R.color.background_light)));
+            getWindow().setStatusBarColor(getResources().getColor(PreferenceManager.
+                    getDefaultSharedPreferences(this).
+                    getInt(COLOR_STATUSBAR, android.R.color.background_light)));
         }
 
         addDialog = new AlertDialog.Builder(this);
@@ -83,7 +87,8 @@ public class TaskOneActivity extends AppCompatActivity {
 
                         }*/
 
-                        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(TaskOneActivity.this);
+                        SharedPreferences preferences = PreferenceManager.
+                                getDefaultSharedPreferences(TaskOneActivity.this);
 
 
                         if (colorS == android.R.color.background_light) {
@@ -98,7 +103,10 @@ public class TaskOneActivity extends AppCompatActivity {
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
                         getWindow().setStatusBarColor(getResources().getColor(colorS));
                         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
-                        actionBar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(PreferenceManager.getDefaultSharedPreferences(TaskOneActivity.this).getInt("colorA", android.R.color.background_light))));
+                        actionBar.setBackgroundDrawable
+                                (new ColorDrawable(getResources().getColor(PreferenceManager.
+                                        getDefaultSharedPreferences(TaskOneActivity.this).
+                                        getInt("colorA", android.R.color.background_light))));
 
 
 
@@ -139,8 +147,10 @@ public class TaskOneActivity extends AppCompatActivity {
 
     private void updateColor() {
         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
-        int colorStatusBar = getResources().getColor(PreferenceManager.getDefaultSharedPreferences(this).getInt("colorS", android.R.color.background_dark));
-        int colorActionBar = getResources().getColor(PreferenceManager.getDefaultSharedPreferences(this).getInt("colorA", android.R.color.background_light));
+        int colorStatusBar = getResources().getColor(PreferenceManager.
+                getDefaultSharedPreferences(this).getInt("colorS", android.R.color.background_dark));
+        int colorActionBar = getResources().getColor(PreferenceManager.
+                getDefaultSharedPreferences(this).getInt("colorA", android.R.color.background_light));
         findViewById(android.R.id.content).setBackgroundColor(colorActionBar);
 
         if (actionBar != null) {

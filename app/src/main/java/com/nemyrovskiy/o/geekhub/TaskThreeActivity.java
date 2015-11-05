@@ -35,7 +35,8 @@ public class TaskThreeActivity extends AppCompatActivity implements View.OnClick
         if (supportActionBar != null) {
             supportActionBar.setDisplayHomeAsUpEnabled(true);
         }
-        findViewById(android.R.id.content).setBackgroundColor(PreferenceManager.getDefaultSharedPreferences(this).getInt("color", android.R.color.background_light));
+        findViewById(android.R.id.content).setBackgroundColor(PreferenceManager.
+                getDefaultSharedPreferences(this).getInt("color", android.R.color.background_light));
 
 
         textView1 = (TextView) findViewById(R.id.textview_taskthree1);
@@ -117,8 +118,10 @@ public class TaskThreeActivity extends AppCompatActivity implements View.OnClick
 
     private void updateColor() {
         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
-        int colorStatusBar = getResources().getColor(PreferenceManager.getDefaultSharedPreferences(this).getInt("colorS", android.R.color.background_dark));
-        int colorActionBar = getResources().getColor(PreferenceManager.getDefaultSharedPreferences(this).getInt("colorA", android.R.color.background_light));
+        int colorStatusBar = getResources().getColor(PreferenceManager.
+                getDefaultSharedPreferences(this).getInt("colorS", android.R.color.background_dark));
+        int colorActionBar = getResources().getColor(PreferenceManager.
+                getDefaultSharedPreferences(this).getInt("colorA", android.R.color.background_light));
         findViewById(android.R.id.content).setBackgroundColor(colorActionBar);
 
         if (actionBar != null) {

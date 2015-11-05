@@ -12,21 +12,23 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 
-// TODO: 28.10.2015 Перепілити всьо під стрінги, добавити лендскейп, добавити свої теми для кожного кольору,
-// допілить зафарбовування екшн і статусбара, удалити тоаст з 2го актівіті
+// TODO: 28.10.2015 Перепілити всьо під стрінги, добавити лендскейп, добавити свої теми для кожного кольору
 
-public class MainActivity extends AppCompatActivity /*implements View.OnClickListener*/ {
+public class MainActivity extends AppCompatActivity implements Animation.AnimationListener /*implements View.OnClickListener*/ {
     public static final int REQUEST_CODE = 1;
-
+    Animation animRotate;
     private String[] mScreenTitles;
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
-
+    private ImageView geekLogo;
     private ActionBarDrawerToggle mDrawerToggle;
     private CharSequence mDrawerTitle;
     private CharSequence mTitle;
@@ -42,6 +44,24 @@ public class MainActivity extends AppCompatActivity /*implements View.OnClickLis
         mScreenTitles = getResources().getStringArray(R.array.screen_array);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
+
+
+        geekLogo = (ImageView) findViewById(R.id.image_gh_logo);
+        animRotate = AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.rotate);
+        animRotate.setAnimationListener(this);
+        geekLogo.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                geekLogo.setVisibility(View.VISIBLE);
+                geekLogo.startAnimation(animRotate);
+                return true;
+            }
+        });
+
+
+
+
 
         mDrawerList.setAdapter(new ArrayAdapter<String>(this, R.layout.drawer_list_item, mScreenTitles));
 
@@ -71,6 +91,7 @@ public class MainActivity extends AppCompatActivity /*implements View.OnClickLis
         updateColor();
 
     }
+
 
     private void selectItem(int position) {
 
@@ -125,8 +146,10 @@ public class MainActivity extends AppCompatActivity /*implements View.OnClickLis
 
     private void updateColor() {
         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
-        int colorStatusBar = getResources().getColor(PreferenceManager.getDefaultSharedPreferences(this).getInt("colorS", android.R.color.background_dark));
-        int colorActionBar = getResources().getColor(PreferenceManager.getDefaultSharedPreferences(this).getInt("colorA", android.R.color.background_light));
+        int colorStatusBar = getResources().getColor(PreferenceManager.
+                getDefaultSharedPreferences(this).getInt("colorS", android.R.color.background_dark));
+        int colorActionBar = getResources().getColor(PreferenceManager.
+                getDefaultSharedPreferences(this).getInt("colorA", android.R.color.background_light));
         findViewById(android.R.id.content).setBackgroundColor(colorActionBar);
 
         if (actionBar != null) {
@@ -138,6 +161,22 @@ public class MainActivity extends AppCompatActivity /*implements View.OnClickLis
 
         mDrawerList.setBackgroundColor(colorStatusBar);
 
+    }
+
+    @Override
+    public void onAnimationEnd(Animation animation) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void onAnimationRepeat(Animation animation) {
+        // TODO Auto-generated method stub
+    }
+
+    @Override
+    public void onAnimationStart(Animation animation) {
+        // TODO Auto-generated method stub
     }
 
     public class DrawerItemClickListener implements ListView.OnItemClickListener {

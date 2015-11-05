@@ -1,5 +1,6 @@
 package com.nemyrovskiy.o.geekhub.animations;
 
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,34 +12,34 @@ import android.widget.TextView;
 
 import com.nemyrovskiy.o.geekhub.R;
 
+public class RotateActivity extends Activity implements AnimationListener {
 
-public class FadeInActivity extends Activity implements AnimationListener {
-
-    TextView txtMessage;
+    TextView imgText;
     Button btnStart;
 
-    Animation animFadein;
+
+    Animation animRotate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.anim_activity);
 
-        txtMessage = (TextView) findViewById(R.id.anim_text);
+        imgText = (TextView) findViewById(R.id.anim_text);
         btnStart = (Button) findViewById(R.id.anim_button);
 
-        animFadein = AnimationUtils.loadAnimation(getApplicationContext(),
-                R.anim.fade_in);
+        animRotate = AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.rotate);
 
-        animFadein.setAnimationListener(this);
+        animRotate.setAnimationListener(this);
 
         btnStart.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                txtMessage.setVisibility(View.VISIBLE);
+                imgText.setVisibility(View.VISIBLE);
 
-                txtMessage.startAnimation(animFadein);
+                imgText.startAnimation(animRotate);
             }
         });
 
@@ -47,7 +48,6 @@ public class FadeInActivity extends Activity implements AnimationListener {
     @Override
     public void onAnimationEnd(Animation animation) {
         // TODO Auto-generated method stub
-
     }
 
     @Override

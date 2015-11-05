@@ -13,10 +13,10 @@
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
 
-    <string name="anim_1">Анімація №1</string>
-    <string name="anim_2">Анімація №2</string>
-    <string name="anim_3">Анімація №3</string>
-    <string name="anim_4">Анімація №4</string>
+    <string name="anim_1">Fade in</string>
+    <string name="anim_2">Blink</string>
+    <string name="anim_3">Zoom in</string>
+    <string name="anim_4">Rotate</string>
 
 
 </resources>

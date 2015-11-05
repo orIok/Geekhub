@@ -48,6 +48,21 @@
             android:label="@string/app_name"
             android:parentActivityName=".TaskFiveActivity"/>
 
+        <activity
+            android:name=".animations.BlinkActivity"
+            android:label="@string/app_name"
+            android:parentActivityName=".TaskFiveActivity"/>
+
+        <activity
+            android:name=".animations.ZoomInActivity"
+            android:label="@string/app_name"
+            android:parentActivityName=".TaskFiveActivity"/>
+
+        <activity
+            android:name=".animations.RotateActivity"
+            android:label="@string/app_name"
+            android:parentActivityName=".TaskFiveActivity"/>
+
     </application>
 
 </manifest>

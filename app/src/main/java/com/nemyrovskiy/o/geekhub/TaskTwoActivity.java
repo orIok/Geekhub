@@ -52,7 +52,8 @@ public class TaskTwoActivity extends AppCompatActivity implements View.OnClickLi
             case R.id.btn_factorial:
                 try {
                     facText.setText
-                            (String.valueOf(factorial(Integer.parseInt(facEdText.getText().toString()))));
+                            (String.valueOf(factorial(Integer.parseInt
+                                    (facEdText.getText().toString()))));
 
                     if (factorial(Integer.parseInt(facEdText.getText().toString())) == -1)
                         facText.setText("завелике число");
@@ -66,7 +67,8 @@ public class TaskTwoActivity extends AppCompatActivity implements View.OnClickLi
                 try {
                     if (facText.getText() != null) {
                         facText.setText
-                                (String.valueOf(fib(Integer.parseInt(facEdText.getText().toString()) - 1)));
+                                (String.valueOf(fib(Integer.parseInt
+                                        (facEdText.getText().toString()) - 1)));
                     }
 
                     if (fib(Integer.parseInt(facEdText.getText().toString()) - 1) == -1)
@@ -81,8 +83,10 @@ public class TaskTwoActivity extends AppCompatActivity implements View.OnClickLi
 
     private void updateColor() {
         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
-        int colorStatusBar = getResources().getColor(PreferenceManager.getDefaultSharedPreferences(this).getInt("colorS", android.R.color.background_dark));
-        int colorActionBar = getResources().getColor(PreferenceManager.getDefaultSharedPreferences(this).getInt("colorA", android.R.color.background_light));
+        int colorStatusBar = getResources().getColor(PreferenceManager.
+                getDefaultSharedPreferences(this).getInt("colorS", android.R.color.background_dark));
+        int colorActionBar = getResources().getColor(PreferenceManager.
+                getDefaultSharedPreferences(this).getInt("colorA", android.R.color.background_light));
         findViewById(android.R.id.content).setBackgroundColor(colorActionBar);
 
         if (actionBar != null) {

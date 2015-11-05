@@ -11,13 +11,12 @@ import android.widget.TextView;
 
 import com.nemyrovskiy.o.geekhub.R;
 
-
-public class FadeInActivity extends Activity implements AnimationListener {
+public class BlinkActivity extends Activity implements AnimationListener {
 
     TextView txtMessage;
     Button btnStart;
 
-    Animation animFadein;
+    Animation animBlink;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +26,10 @@ public class FadeInActivity extends Activity implements AnimationListener {
         txtMessage = (TextView) findViewById(R.id.anim_text);
         btnStart = (Button) findViewById(R.id.anim_button);
 
-        animFadein = AnimationUtils.loadAnimation(getApplicationContext(),
-                R.anim.fade_in);
+        animBlink = AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.blink);
 
-        animFadein.setAnimationListener(this);
+        animBlink.setAnimationListener(this);
 
         btnStart.setOnClickListener(new View.OnClickListener() {
 
@@ -38,7 +37,7 @@ public class FadeInActivity extends Activity implements AnimationListener {
             public void onClick(View v) {
                 txtMessage.setVisibility(View.VISIBLE);
 
-                txtMessage.startAnimation(animFadein);
+                txtMessage.startAnimation(animBlink);
             }
         });
 
@@ -53,13 +52,11 @@ public class FadeInActivity extends Activity implements AnimationListener {
     @Override
     public void onAnimationRepeat(Animation animation) {
         // TODO Auto-generated method stub
-
     }
 
     @Override
     public void onAnimationStart(Animation animation) {
         // TODO Auto-generated method stub
-
     }
 
 }

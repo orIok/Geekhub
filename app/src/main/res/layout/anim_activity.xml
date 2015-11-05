@@ -5,15 +5,16 @@
               android:orientation="vertical">
 
     <TextView
-        android:id="@+id/xyi_text"
+        android:id="@+id/anim_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="XYI"/>
+        android:text="SOME TEXT"
+        android:textSize="50dp"/>
 
     <Button
-        android:id="@+id/xyi_button"
+        android:id="@+id/anim_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="XYI BUTTON"/>
+        android:text="start animation"/>
 
 </LinearLayout>
