@@ -122,7 +122,7 @@ public class TaskThreeActivity extends AppCompatActivity implements View.OnClick
                 getDefaultSharedPreferences(this).getInt("colorS", android.R.color.background_dark));
         int colorActionBar = getResources().getColor(PreferenceManager.
                 getDefaultSharedPreferences(this).getInt("colorA", android.R.color.background_light));
-        findViewById(android.R.id.content).setBackgroundColor(colorActionBar);
+        /*findViewById(android.R.id.content).setBackgroundColor(colorActionBar);*/
 
         if (actionBar != null) {
             actionBar.setBackgroundDrawable(new ColorDrawable(colorActionBar));

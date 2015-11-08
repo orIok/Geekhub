@@ -1,20 +1,17 @@
 package com.nemyrovskiy.o.geekhub;
 
-import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.TextView;
 
-import com.nemyrovskiy.o.geekhub.animations.BlinkActivity;
-import com.nemyrovskiy.o.geekhub.animations.FadeInActivity;
-import com.nemyrovskiy.o.geekhub.animations.RotateActivity;
-import com.nemyrovskiy.o.geekhub.animations.ZoomInActivity;
-
-public class TaskFiveActivity extends AppCompatActivity {
+public class TaskFiveActivity extends AppCompatActivity implements Animation.AnimationListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,35 +24,55 @@ public class TaskFiveActivity extends AppCompatActivity {
         Button btn3 = (Button) findViewById(R.id.anim_3);
         Button btn4 = (Button) findViewById(R.id.anim_4);
 
+
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TaskFiveActivity.this, FadeInActivity.class);
-                startActivity(i);
+                Animation animFadein;
+                animFadein = AnimationUtils.loadAnimation(getApplicationContext(),
+                        R.anim.fade_in);
+                TextView textView = (TextView) findViewById(R.id.text_anim);
+                textView.setVisibility(View.VISIBLE);
+                textView.startAnimation(animFadein);
             }
         });
 
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TaskFiveActivity.this, BlinkActivity.class);
-                startActivity(i);
+                Animation animBlink;
+                animBlink = AnimationUtils.loadAnimation(getApplicationContext(),
+                        R.anim.blink);
+                animBlink.setAnimationListener(TaskFiveActivity.this);
+                TextView textView = (TextView) findViewById(R.id.text_anim);
+                textView.setVisibility(View.VISIBLE);
+                textView.startAnimation(animBlink);
             }
         });
 
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TaskFiveActivity.this, ZoomInActivity.class);
-                startActivity(i);
+                Animation animZoomIn;
+                animZoomIn = AnimationUtils.loadAnimation(getApplicationContext(),
+                        R.anim.zoom_in);
+                animZoomIn.setAnimationListener(TaskFiveActivity.this);
+                TextView textView = (TextView) findViewById(R.id.text_anim);
+                textView.setVisibility(View.VISIBLE);
+                textView.startAnimation(animZoomIn);
             }
         });
 
         btn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TaskFiveActivity.this, RotateActivity.class);
-                startActivity(i);
+                Animation animRotate;
+                animRotate = AnimationUtils.loadAnimation(getApplicationContext(),
+                        R.anim.rotate);
+                animRotate.setAnimationListener(TaskFiveActivity.this);
+                TextView textView = (TextView) findViewById(R.id.text_anim);
+                textView.setVisibility(View.VISIBLE);
+                textView.startAnimation(animRotate);
             }
         });
 
@@ -68,7 +85,7 @@ public class TaskFiveActivity extends AppCompatActivity {
                 getDefaultSharedPreferences(this).getInt("colorS", android.R.color.background_dark));
         int colorActionBar = getResources().getColor(PreferenceManager.
                 getDefaultSharedPreferences(this).getInt("colorA", android.R.color.background_light));
-        findViewById(android.R.id.content).setBackgroundColor(colorActionBar);
+        /*findViewById(android.R.id.content).setBackgroundColor(colorActionBar);*/
 
         if (actionBar != null) {
             actionBar.setBackgroundDrawable(new ColorDrawable(colorActionBar));
@@ -78,6 +95,22 @@ public class TaskFiveActivity extends AppCompatActivity {
             getWindow().setStatusBarColor(colorStatusBar);
 
 
+    }
+
+    @Override
+    public void onAnimationEnd(Animation animation) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void onAnimationRepeat(Animation animation) {
+        // TODO Auto-generated method stub
+    }
+
+    @Override
+    public void onAnimationStart(Animation animation) {
+        // TODO Auto-generated method stub
     }
 
 
