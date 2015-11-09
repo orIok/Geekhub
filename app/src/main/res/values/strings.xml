@@ -18,6 +18,15 @@
     <string name="anim_3">Zoom in</string>
     <string name="anim_4">Rotate</string>
 
+    <string name="item_1">Task 1</string>
+    <string name="item_2">Task 2</string>
+    <string name="item_3">Task 3</string>
+    <string name="item_4">Task 4</string>
+    <string name="item_5">Task 5</string>
+
+    <string name="open">Drawer open</string>
+    <string name="close">Drawer close</string>
+
 
 </resources>
 

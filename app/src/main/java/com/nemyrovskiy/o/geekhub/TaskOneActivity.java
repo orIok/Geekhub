@@ -18,6 +18,7 @@ public class TaskOneActivity extends AppCompatActivity {
 
     AlertDialog.Builder addDialog;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,9 +32,9 @@ public class TaskOneActivity extends AppCompatActivity {
         final String COLOR_STATUSBAR = "colorS";
         final String COLOR_ACTIONBAR = "colorA";
 
-        findViewById(android.R.id.content).setBackgroundColor(getResources().
+        /*findViewById(android.R.id.content).setBackgroundColor(getResources().
                 getColor(PreferenceManager.getDefaultSharedPreferences(this).
-                        getInt(COLOR_ACTIONBAR, android.R.color.background_light)));
+                        getInt(COLOR_ACTIONBAR, android.R.color.background_light)));*/
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setStatusBarColor(getResources().getColor(PreferenceManager.
                     getDefaultSharedPreferences(this).
@@ -101,12 +102,12 @@ public class TaskOneActivity extends AppCompatActivity {
 
                         /*thisLayout.setBackgroundColor(getResources().getColor(colorA));*/
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
-                        getWindow().setStatusBarColor(getResources().getColor(colorS));
-                        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+                            getWindow().setStatusBarColor(getResources().getColor(colorS));
+                        /*android.support.v7.app.ActionBar actionBar = getSupportActionBar();
                         actionBar.setBackgroundDrawable
                                 (new ColorDrawable(getResources().getColor(PreferenceManager.
                                         getDefaultSharedPreferences(TaskOneActivity.this).
-                                        getInt("colorA", android.R.color.background_light))));
+                                        getInt("colorA", android.R.color.background_light))));*/
 
 
 
@@ -124,6 +125,7 @@ public class TaskOneActivity extends AppCompatActivity {
         });
 
         updateColor();
+
 
     }
 /*
