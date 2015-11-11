@@ -5,6 +5,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentManager;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
 
 import com.nemyrovskiy.o.geekhub.abstractC.BaseActivity;
 import com.nemyrovskiy.o.geekhub.abstractC.interfaces;
@@ -17,6 +19,17 @@ public class TaskFourActivity extends BaseActivity implements interfaces {
         super.onCreate(savedInstanceState);
         if (isAddFragment())
             setContentView(R.layout.fragm_activity);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        toolbar.setNavigationIcon(R.drawable.abc_ic_ab_back_mtrl_am_alpha);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         updateColor();
     }

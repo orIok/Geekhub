@@ -1,10 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?><!--suppress AndroidDomInspection -->
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingLeft="5dp"
-    android:paddingTop="16dp">
+    >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/abc_action_bar_default_height_material"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+
+        />
 
     <TextView
         android:id="@+id/textview_taskthree1"

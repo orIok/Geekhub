@@ -4,16 +4,17 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
 public class TaskTwoActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private EditText facEdText, fibEdText;
-    private TextView facText, fibText;
+    private EditText edText;
+    private TextView textView;
+
 
     public static int factorial(int n) {
         if (n > 10) return -1;
@@ -31,15 +32,27 @@ public class TaskTwoActivity extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tasktwo);
-        ActionBar supportActionBar = getSupportActionBar();
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        toolbar.setNavigationIcon(R.drawable.abc_ic_ab_back_mtrl_am_alpha);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+
+        /*ActionBar supportActionBar = getSupportActionBar();
         if (supportActionBar != null) {
             supportActionBar.setDisplayHomeAsUpEnabled(true);
         }
         findViewById(android.R.id.content).setBackgroundColor(PreferenceManager.
-                getDefaultSharedPreferences(this).getInt("color", android.R.color.background_light));
+                getDefaultSharedPreferences(this).getInt("color", android.R.color.background_light));*/
 
-        facEdText = (EditText) findViewById(R.id.edittext_fib);
-        facText = (TextView) findViewById(R.id.textview_fib);
+        edText = (EditText) findViewById(R.id.edittext_fib);
+        textView = (TextView) findViewById(R.id.textview_fib);
 
         findViewById(R.id.btn_factorial).setOnClickListener(this);
         findViewById(R.id.btn_fibonacci).setOnClickListener(this);
@@ -51,30 +64,30 @@ public class TaskTwoActivity extends AppCompatActivity implements View.OnClickLi
         switch (v.getId()) {
             case R.id.btn_factorial:
                 try {
-                    facText.setText
+                    textView.setText
                             (String.valueOf(factorial(Integer.parseInt
-                                    (facEdText.getText().toString()))));
+                                    (edText.getText().toString()))));
 
-                    if (factorial(Integer.parseInt(facEdText.getText().toString())) == -1)
-                        facText.setText("завелике число");
+                    if (factorial(Integer.parseInt(edText.getText().toString())) == -1)
+                        textView.setText("завелике число");
 
                 } catch (Exception ex) {
-                    facText.setText("введіть ціле число");
+                    textView.setText("введіть ціле число");
                 }
                 break;
 
             case R.id.btn_fibonacci:
                 try {
-                    if (facText.getText() != null) {
-                        facText.setText
+                    if (textView.getText() != null) {
+                        textView.setText
                                 (String.valueOf(fib(Integer.parseInt
-                                        (facEdText.getText().toString()) - 1)));
+                                        (edText.getText().toString()) - 1)));
                     }
 
-                    if (fib(Integer.parseInt(facEdText.getText().toString()) - 1) == -1)
-                        facText.setText("завелике число");
+                    if (fib(Integer.parseInt(edText.getText().toString()) - 1) == -1)
+                        textView.setText("завелике число");
                 } catch (Exception ex) {
-                    facText.setText("введіть ціле число");
+                    textView.setText("введіть ціле число");
                 }
                 break;
         }
@@ -87,7 +100,6 @@ public class TaskTwoActivity extends AppCompatActivity implements View.OnClickLi
                 getDefaultSharedPreferences(this).getInt("colorS", android.R.color.background_dark));
         int colorActionBar = getResources().getColor(PreferenceManager.
                 getDefaultSharedPreferences(this).getInt("colorA", android.R.color.background_light));
-        /*findViewById(android.R.id.content).setBackgroundColor(colorActionBar);*/
 
         if (actionBar != null) {
             actionBar.setBackgroundDrawable(new ColorDrawable(colorActionBar));

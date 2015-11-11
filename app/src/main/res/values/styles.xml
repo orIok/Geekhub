@@ -10,4 +10,11 @@
         <!--<item name="colorPrimary">@color/primary_material_dark</item>-->
         <!--<item name="colorPrimaryDark">@color/primary_dark_material_dark</item>-->
     </style>
+
+
+    <style name="MyAppTheme.AppTheme" parent="Theme.AppCompat">
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+    </style>
+
 </resources>
