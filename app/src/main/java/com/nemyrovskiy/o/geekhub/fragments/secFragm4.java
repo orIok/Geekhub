@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.nemyrovskiy.o.geekhub.R;
 
-public class secFragm extends android.support.v4.app.Fragment {
+public class secFragm4 extends android.support.v4.app.Fragment {
     TextView tView;
     Bundle bundle;
 

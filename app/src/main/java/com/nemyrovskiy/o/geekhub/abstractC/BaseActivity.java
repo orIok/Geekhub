@@ -5,7 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 
 import com.nemyrovskiy.o.geekhub.R;
-import com.nemyrovskiy.o.geekhub.fragments.firstFragm;
+import com.nemyrovskiy.o.geekhub.fragments.firstFragm4;
 
 
 public abstract class BaseActivity extends AppCompatActivity {
@@ -24,7 +24,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     public void addFragment() {
         FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().add(R.id.fr1, new firstFragm()).commit();
+        manager.beginTransaction().add(R.id.fr1, new firstFragm4()).commit();
 
     }
 

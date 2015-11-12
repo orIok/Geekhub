@@ -23,9 +23,12 @@
     <string name="item_3">Task 3</string>
     <string name="item_4">Task 4</string>
     <string name="item_5">Task 5</string>
+    <string name="item_6">Task 6</string>
 
     <string name="open">Drawer open</string>
     <string name="close">Drawer close</string>
+
+    <string name="empty">No data</string>
 
 
 </resources>

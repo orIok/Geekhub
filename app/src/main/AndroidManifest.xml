@@ -43,6 +43,11 @@
             android:label="@string/app_name"
             android:parentActivityName=".MainActivity"/>
 
+        <activity
+            android:name=".TaskSixActivity"
+            android:label="@string/app_name"
+            android:parentActivityName=".MainActivity"/>
+
 
     </application>
 

@@ -84,6 +84,12 @@ public class MainActivity extends AppCompatActivity implements
             case R.id.drawer_item_5:
                 startActivity(new Intent(this, TaskFiveActivity.class));
                 break;
+
+            case R.id.drawer_item_6:
+                startActivity(new Intent(this, TaskSixActivity.class));
+                break;
+
+
         }
     }
 

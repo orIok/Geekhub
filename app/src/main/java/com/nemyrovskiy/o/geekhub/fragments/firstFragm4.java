@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import com.nemyrovskiy.o.geekhub.R;
 import com.nemyrovskiy.o.geekhub.abstractC.interfaces;
 
-public class firstFragm extends Fragment implements View.OnClickListener {
+public class firstFragm4 extends Fragment implements View.OnClickListener {
     interfaces myInterface;
 
     @Nullable

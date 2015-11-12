@@ -10,7 +10,7 @@ import android.view.View;
 
 import com.nemyrovskiy.o.geekhub.abstractC.BaseActivity;
 import com.nemyrovskiy.o.geekhub.abstractC.interfaces;
-import com.nemyrovskiy.o.geekhub.fragments.secFragm;
+import com.nemyrovskiy.o.geekhub.fragments.secFragm4;
 
 public class TaskFourActivity extends BaseActivity implements interfaces {
 
@@ -44,7 +44,7 @@ public class TaskFourActivity extends BaseActivity implements interfaces {
         FragmentManager manager = getSupportFragmentManager();
         Bundle bundle = new Bundle();
         bundle.putString("t1", "next");
-        secFragm fragment = new secFragm();
+        secFragm4 fragment = new secFragm4();
         fragment.setArguments(bundle);
         manager.beginTransaction().replace(R.id.tr2, fragment).commit();
     }
@@ -54,7 +54,7 @@ public class TaskFourActivity extends BaseActivity implements interfaces {
         FragmentManager manager = getSupportFragmentManager();
         Bundle bundle = new Bundle();
         bundle.putString("t1", "previous");
-        secFragm fragment = new secFragm();
+        secFragm4 fragment = new secFragm4();
         fragment.setArguments(bundle);
         manager.beginTransaction().replace(R.id.tr2, fragment).commit();
     }
