@@ -1,4 +1,4 @@
-package com.nemyrovskiy.o.geekhub.fragments;
+package com.nemyrovskiy.o.geekhub.TaskSix;
 
 import android.app.Fragment;
 import android.os.Bundle;

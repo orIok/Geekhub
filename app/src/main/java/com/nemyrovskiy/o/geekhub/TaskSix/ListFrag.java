@@ -1,4 +1,4 @@
-package com.nemyrovskiy.o.geekhub.fragments;
+package com.nemyrovskiy.o.geekhub.TaskSix;
 
 import android.app.ListFragment;
 import android.os.Bundle;
@@ -6,10 +6,10 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.nemyrovskiy.o.geekhub.ListData;
-import com.nemyrovskiy.o.geekhub.R;
-
 public class ListFrag extends ListFragment {
+
+
+
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -22,9 +22,15 @@ public class ListFrag extends ListFragment {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
 
-        ListContent listContent = new ListContent();
-
-        getFragmentManager().beginTransaction().replace(R.id.list_conteiner, listContent).commit();
+        switch (position) {
+            case 0:
+/*
+                startActivity(new Intent(, TaskSixContentActivity.class));
+*/
+                break;
+        }
 
     }
+
+
 }
