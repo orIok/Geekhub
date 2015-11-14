@@ -45,7 +45,7 @@ public class ListContent extends Fragment {
         ListData listData = new ListData();
         tView = (TextView) view.findViewById(R.id.content_view);
         int i = PreferenceManager.
-                getDefaultSharedPreferences(getActivity()).getInt("POSITION", 0);
+                getDefaultSharedPreferences(getActivity()).getInt(ListFrag.POSITION, 0);
         tView.setText(listData.dataC[i]);
     }
 }

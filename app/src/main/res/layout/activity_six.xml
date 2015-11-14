@@ -15,14 +15,14 @@
 
         />
 
-    <fragment
-        android:name="com.nemyrovskiy.o.geekhub.TaskSix.ListFrag"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+    <!--<fragment-->
+    <!--android:name="com.nemyrovskiy.o.geekhub.TaskSix.ListFrag"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--/>-->
 
     <FrameLayout
-        android:id="@+id/list_conteiner"
+        android:id="@+id/list_conteiner_horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 

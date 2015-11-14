@@ -15,21 +15,28 @@
 
         />
 
-    <fragment
-        android:name="com.nemyrovskiy.o.geekhub.TaskSix.ListFrag"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+    <!--<fragment-->
+    <!--android:name="com.nemyrovskiy.o.geekhub.TaskSix.ListFrag"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--/>-->
 
-    <FrameLayout
-        android:id="@+id/list_conteiner_horizontal"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </FrameLayout>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-    <FrameLayout
-        android:id="@+id/list_contnt_horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </FrameLayout>
+        <FrameLayout
+            android:id="@+id/list_conteiner_horizontal"
+            android:layout_width="240dp"
+            android:layout_height="match_parent">
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/list_contnt_horizontal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+        </FrameLayout>
+    </LinearLayout>
 </LinearLayout>
