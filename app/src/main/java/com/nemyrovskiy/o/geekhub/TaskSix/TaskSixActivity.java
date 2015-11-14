@@ -16,6 +16,12 @@ public class TaskSixActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+        setContentView(R.layout.activity_six);
+
+
+
         setContentView(R.layout.activity_six);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -34,8 +40,8 @@ public class TaskSixActivity extends AppCompatActivity {
 
         getFragmentManager().beginTransaction().replace(R.id.list_conteiner, listFrag).commit();
 
-
         updateColor();
+
 
     }
 
@@ -54,5 +60,6 @@ public class TaskSixActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
             getWindow().setStatusBarColor(colorStatusBar);
     }
+
 
 }

@@ -14,10 +14,11 @@
 
         />
 
-    <TextView
-        android:id="@+id/chem_descript"
+    <FrameLayout
+        android:id="@+id/content_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center">
-    </TextView>
+        android:layout_height="wrap_content">
+
+    </FrameLayout>
+
 </LinearLayout>

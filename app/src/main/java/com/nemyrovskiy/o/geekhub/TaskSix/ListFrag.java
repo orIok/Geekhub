@@ -1,14 +1,17 @@
 package com.nemyrovskiy.o.geekhub.TaskSix;
 
 import android.app.ListFragment;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class ListFrag extends ListFragment {
 
-
+    private static final String POSITION = "POSITION";
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -22,15 +25,11 @@ public class ListFrag extends ListFragment {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
 
-        switch (position) {
-            case 0:
-/*
-                startActivity(new Intent(, TaskSixContentActivity.class));
-*/
-                break;
-        }
+        SharedPreferences preferences = PreferenceManager.
+                getDefaultSharedPreferences(getActivity());
+        preferences.edit().putInt(POSITION, position).apply();
+
+        startActivity(new Intent(getActivity(), TaskSixContentActivity.class));
 
     }
-
-
 }
